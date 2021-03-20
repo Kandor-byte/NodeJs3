@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: black;
+}
+
+.titl-cont {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.titl {
+    color: cornsilk;
+    font-variant: small-caps;
+    font-size: 50px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.titl:hover {
+    border-bottom: 2px solid cornsilk;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
