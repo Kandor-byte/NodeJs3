@@ -43,7 +43,7 @@
 //
 //callFunction(saybye);
 
-//var stuff = require("./count");
+//var stuff = require("count.js");
 //
 //console.log(stuff.counter(["shaun", "crystal", "ryu", "ray"]));
 //
@@ -53,31 +53,31 @@
 //
 //console.log(stuff.adder(3, stuff.pi));
 
-var events = require("events");
+//var events = require("events");
 
-var util = require("util");
+//var util = require("util");
 
-var Person = function(name){
-    this.name = name;
-};
+//var Person = function(name){
+//    this.name = name;
+//};
 
-util.inherits(Person, events.EventEmitter);
+//util.inherits(Person, events.EventEmitter);
 
-var james = new Person("James");
-var mary = new Person("Mary");
-var roger = new Person("Roger");
+//var james = new Person("James");
+//var mary = new Person("Mary");
+//var roger = new Person("Roger");
 
-var people = [james, mary, roger];
+//var people = [james, mary, roger];
 
-people.forEach(function(person){
-    person.on("speak", function(msg){
-        console.log(person.name + " said: " + msg);
-    });
-});
+//people.forEach(function(person){
+//    person.on("speak", function(msg){
+//        console.log(person.name + " said: " + msg);
+//    });
+//});
 
-james.emit("speak", "hey dudes");
+//james.emit("speak", "hey dudes");
 
-roger.emit("speak", "I want curry");
+//roger.emit("speak", "I want curry");
 
 //element.on("click", function(){});
 
@@ -89,4 +89,21 @@ roger.emit("speak", "I want curry");
 //
 //myEmitter.emit("someEvent", "the event was emitted");
 
+var fs = require("fs");
 
+//var readMe = fs.readFileSync("readme.txt", "utf8"); Synchronous method
+
+//console.log(readMe);
+
+//fs.writeFileSync("writeme.txt", readMe);
+
+//fs.readFile("readme.txt", "utf8", function(err, data){
+//    console.log(data);
+//});
+
+fs.readFile("readme.txt", "utf8", function(err, data){
+     fs.writeFile("writeme.txt", data, (err) => {});
+});
+
+
+//code
