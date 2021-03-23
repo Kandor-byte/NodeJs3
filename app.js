@@ -89,21 +89,41 @@
 //
 //myEmitter.emit("someEvent", "the event was emitted");
 
-var fs = require("fs");
-
 //var readMe = fs.readFileSync("readme.txt", "utf8"); Synchronous method
 
 //console.log(readMe);
 
-//fs.writeFileSync("writeme.txt", readMe);
+//fs.writeFileSync("writeme.txt", readMe); Synchronous method
 
-//fs.readFile("readme.txt", "utf8", function(err, data){
+//fs.readFile("readme.txt", "utf8", function(err, data){  Asynchronous method
 //    console.log(data);
 //});
 
-fs.readFile("readme.txt", "utf8", function(err, data){
-     fs.writeFile("writeme.txt", data, (err) => {});
-});
+//fs.readFile("readme.txt", "utf8", function(err, data){  Asynchronous method
+//     fs.writeFile("writeme.txt", data, (err) => {});
+//});
 
+//fs.writeFileSync("writeme2.txt", "Hello!"); Synchronous method
 
 //code
+
+//fs.unlink("writeme.txt", function(err) { --- Delete a file --- Asynchronous method
+//     if(err) throw err;
+//     console.log("File deleted");
+//});
+
+//fs.mkdirSync("stuff"); //Make a directory Synchronous method
+
+//fs.rmdirSync("stuff"); //Remove a directory Synchronous method
+
+//fs.mkdir("stuff", function(){
+//     fs.readFile("readme.txt", "utf8", function(err, data){ 
+//          fs.writeFile("./stuff/writeme.txt", data, (err) => {});  Make a directory with file that contains data
+//     });
+//});
+
+var fs = require("fs");
+
+fs.unlink("./stuff/writeme.txt", function(){ //Remove directory with file inside Asynchronous method
+   fs.rmdir("stuff", () => {});
+});
