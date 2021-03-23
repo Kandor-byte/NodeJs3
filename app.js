@@ -118,12 +118,12 @@
 
 //fs.mkdir("stuff", function(){
 //     fs.readFile("readme.txt", "utf8", function(err, data){ 
-//          fs.writeFile("./stuff/writeme.txt", data, (err) => {});  Make a directory with file that contains data
+//          fs.writeFile("./stuff/writeme.txt", data, (err) => {});  Make a directory with file that contains data Asynchronous method
 //     });
 //});
 
-var fs = require("fs");
+//var fs = require("fs");
 
-fs.unlink("./stuff/writeme.txt", function(){ //Remove directory with file inside Asynchronous method
-   fs.rmdir("stuff", () => {});
-});
+//fs.unlink("./stuff/writeme.txt", function(){ //Remove directory with file inside Asynchronous method
+//   fs.rmdir("stuff", () => {});
+//});
